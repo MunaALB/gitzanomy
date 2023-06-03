@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/var/www/html/zanomy/application/config/routes.php</file>
+            <file>file:/var/www/html/zanomy/application/config/config.php</file>
+            <file>file:/var/www/html/zanomy/application/modules/admin/controllers/Home.php</file>
+            <file>file:/var/www/html/zanomy/application/modules/vendor/controllers/Ajax.php</file>
+            <file>file:/var/www/html/zanomy/application/modules/web/views/user/usersidebar.php</file>
+            <file>file:/var/www/html/zanomy/application/modules/vendor/controllers/Home.php</file>
+            <file>file:/var/www/html/zanomy/application/modules/web/controllers/User.php</file>
+            <file>file:/var/www/html/zanomy/application/modules/vendor/controllers/Login.php</file>
+            <file>file:/var/www/html/zanomy/application/modules/vendor/controllers/Vendor.php</file>
+            <file>file:/var/www/html/zanomy/application/modules/web/views/user/edit_profile.php</file>
+            <file>file:/var/www/html/zanomy/application/helpers/custom_helper.php</file>
+            <file>file:/var/www/html/zanomy/application/modules/admin/controllers/Admin.php</file>
+            <file>file:/var/www/html/zanomy/application/config/database.php</file>
+        </group>
+    </open-files>
+</project-private>

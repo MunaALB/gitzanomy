@@ -1,0 +1,86 @@
+<style>
+.alert-para{
+    color: #ef4d32;
+    border: 1px solid;
+    border-radius: 6px;
+}
+.alert-font{
+    float: right;
+    font-size: 26px;
+    margin: -2px -1px;
+    cursor: pointer;
+}
+</style>
+<div class="main-container">
+    <div id="content">
+        <div class="container">
+            <ul class="breadcrumb">
+                <li><a style="color:red;" href="<?=base_url('');?>"><i class="fa fa-home"></i></a></li>
+                
+
+
+                <?php
+                $cat_query_id=$this->uri->segment(3);
+                $getViewQueryCat=$this->db->query("select * from zy_service_category where category_id='".$cat_query_id."'")->row_array();
+                //print_r($getViewQuery);
+                ?>
+                
+                <?php $uriName=$this->uri->segment('4'); if(isset($getViewQueryCat['name']) and ($getViewQueryCat['name'])): ?>
+                    <li><a style="color:red;" href="<?=base_url('en/service-category');?>"><?=$getViewQueryCat['name'];?></a></li>
+                <?php else: ?>
+                    <li><a style="color:red;" href="<?=base_url('en/service-category');?>">Service Category</a></li>
+                <?php endif; ?>
+                <li>Service Sub-Category</li>
+            </ul>
+        </div>
+        <div class="main-container">
+            <div id="content">
+                <div class="container">
+                    <div class="so-categories module custom-slidercates service-subcategory">
+                        <h3 class="modtitle"><span>Service Subcategories</span></h3>
+                        <div class="modcontent">
+                            <div class="cat-wrap theme3 font-title">
+                                <div class="row">
+                                    <p class="alert-para">* If the service is not available in your area. Please make sure your area settings on the top of the page are correct.<i class="fa fa-window-close alert-font" onclick="closeAlert(this);"></i></p>
+                                </div>
+                                <div class="row">
+                                <?php if(isset($subCategory) and $subCategory): foreach($subCategory as $subCat): ?>
+                                        <div class="col-md-2 col-xs-6">
+                                            <div class="content-box">
+                                                <div class="image-cat">
+                                                    <a href="<?php echo base_url('en/service-provider/'.$subCat['sub_category_id'].'/'.(preg_replace('/[^a-zA-Z0-9_.]/', '-', $subCat['category_name'])).'/'.(preg_replace('/[^a-zA-Z0-9_.]/', '-', $subCat['name']))); ?>" title="<?=$subCat['name'];?>">
+                                                        <img src="<?=$subCat['image'];?>" title="210 X 210" alt="210 X 210" />
+                                                    </a>
+                                                </div>
+                                                <div class="cat-title"> 
+                                                <a href="<?php echo base_url('en/service-provider/'.$subCat['sub_category_id'].'/'.(preg_replace('/[^a-zA-Z0-9_.]/', '-', $subCat['category_name'])).'/'.(preg_replace('/[^a-zA-Z0-9_.]/', '-', $subCat['name']))); ?>" title="<?=$subCat['name'];?>"><?=$subCat['name'];?></a>
+                                                <span><?=$subCat['vendor_count'];?> Vendors</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <?php endforeach; ?>
+                                    <?php else: ?>
+                                        <div class="main-container container">
+                                            <div class="row">
+                                                <div class="col-lg-12 col-md-12 messege-nodata">
+                                                    <i class="fa fa-shopping-bag"></i>
+                                                    <h2 class="about-title">No Sub-Category Available</h2>
+                                                    <p> <a href="<?=base_url('');?>">Go To Home</a> </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function closeAlert(o){
+        $(".alert-para").css('display','none');
+    }
+</script>
